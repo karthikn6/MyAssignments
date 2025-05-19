@@ -11,12 +11,6 @@ public class Library {
 	public void issueBook() {
 		System.out.println( "Book issued successfully");
 	}
-	
-	public static void main(String [] args) {
-		
-		}
-
-		
-	}
+}
 
 
