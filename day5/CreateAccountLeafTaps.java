@@ -48,7 +48,7 @@ public class CreateAccountLeafTaps {
 		
 		WebElement dd5 = driver.findElement(By.name("generalStateProvinceGeoId"));
 		Select opt5 = new Select(dd5);
-		opt5.selectByValue("Texas");
+		opt5.selectByValue("TX");
 		
 		driver.findElement(By.xpath("//button[text()='Create Account']")).click();
 		
