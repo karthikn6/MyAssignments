@@ -19,12 +19,12 @@ public class EditLeadLeafTaps {
 		driver.get("http://leaftaps.com/opentaps/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
+ //Login OpenTaps site
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("democsr");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("crmsfa");
 		driver.findElement(By.xpath("//input[@class='decorativeSubmit']")).click();
 		driver.findElement(By.xpath("//a[contains(text(), 'CRM/')]")).click();
-		
+	//Click and Lead tab and create new lead	
 		driver.findElement(By.xpath("//a[text()='Leads']")).click();
 		driver.findElement(By.xpath("//a[text()='Create Lead']")).click();
 		driver.findElement(By.xpath("//input[@id='createLeadForm_companyName']")).sendKeys("CMP-Name");
@@ -38,16 +38,19 @@ public class EditLeadLeafTaps {
 		 WebElement st = driver.findElement(By.name("generalStateProvinceGeoId"));
 		Select opt1 = new Select(st);
 		opt1.selectByVisibleText("New York");
-		
+	//Submit create lead button	
 		driver.findElement(By.xpath("//input[@class='smallSubmit']")).click();
+		// Get above created lead in Lead tab 
 		driver.findElement(By.xpath("//a[text()='Leads']")).click();
 		driver.findElement(By.xpath("//button[@id='ext-gen422']")).click();
 		driver.findElement(By.xpath("//a[text()='CMP-Name']")).click();
+		//Edit lead and clear description and add notes
 		driver.findElement(By.xpath("//a[text()='Edit']")).click();
 		driver.findElement(By.xpath("//textarea[@id='updateLeadForm_description']")).clear();
 		driver.findElement(By.xpath("//textarea[@id='updateLeadForm_importantNote']")).sendKeys("Test Important Note field");
+		// Update the saved lead
 		driver.findElement(By.xpath("//td[@id='ext-gen529']")).click();
-		
+		//Get teh title of the page
 		String title = driver.getTitle();
 		System.out.println("Title of the page is: "+title);
 		driver.close();
